@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+/.vs
+/Challenge/.vs/Challenge/v16
+/Challenge/Challenge/Debug/Challenge.tlog
+/Challenge/Challenge/Debug
+/Challenge/Debug
