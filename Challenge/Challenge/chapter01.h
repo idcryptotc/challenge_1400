@@ -1,4 +1,14 @@
 #pragma once
+#include <iostream>
+#include <Windows.h>
+#include <conio.h>
+#include <fcntl.h>
+#include <io.h>
+#include <iomanip>
+#include <vector>
+#include <functional>
+#include <string>
+
 static class chapter01
 {
 public:

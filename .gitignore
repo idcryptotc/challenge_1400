@@ -31,7 +31,11 @@
 *.out
 *.app
 /.vs
+/Challenge/.vs
 /Challenge/.vs/Challenge/v16
 /Challenge/Challenge/Debug/Challenge.tlog
 /Challenge/Challenge/Debug
 /Challenge/Debug
+/Challenge/Challenge/x64
+/Challenge/x64
+.gitignore

@@ -1,15 +1,18 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 #include "main.h"
+
+#pragma warning(push)
+#pragma warning(disable: 6031)
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	std::cout << "Hello, Õåð ñ ãîðû! çäåñü áóäåò êó÷à ñêó÷íûõ çàäà÷...\níàõóÿðåííûõ â êîíñîëè :)" << std::endl;
-	std::cout << "Òåáå ïðèä¸òñÿ êàêèì-òî îáðàçîì ÷òî-òî âûáèðàòü è äàæå ÷òî-òî ââîäèòü" << std::endl;
-	std::cout << "Ñîäåðæàíèå:" << std::endl;
-	std::cout << "Ãëàâà 1" << std::endl;
-	std::cout << "Âûáåðè ãëàâó: " << std::endl;
+	std::cout << "Hello, Ð¥ÐµÑ€ Ñ Ð³Ð¾Ñ€Ñ‹! Ð·Ð´ÐµÑÑŒ Ð±ÑƒÐ´ÐµÑ‚ ÐºÑƒÑ‡Ð° ÑÐºÑƒÑ‡Ð½Ñ‹Ñ… Ð·Ð°Ð´Ð°Ñ‡...\nÐ½Ð°Ñ…ÑƒÑÑ€ÐµÐ½Ð½Ñ‹Ñ… Ð² ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸ :)" << std::endl;
+	std::cout << "Ð¢ÐµÐ±Ðµ Ð¿Ñ€Ð¸Ð´Ñ‘Ñ‚ÑÑ ÐºÐ°ÐºÐ¸Ð¼-Ñ‚Ð¾ Ð¾Ð±Ñ€Ð°Ð·Ð¾Ð¼ Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð²Ñ‹Ð±Ð¸Ñ€Ð°Ñ‚ÑŒ Ð¸ Ð´Ð°Ð¶Ðµ Ñ‡Ñ‚Ð¾-Ñ‚Ð¾ Ð²Ð²Ð¾Ð´Ð¸Ñ‚ÑŒ" << std::endl;
+	std::cout << "Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð°Ð½Ð¸Ðµ:" << std::endl;
+	std::cout << "Ð“Ð»Ð°Ð²Ð° 1" << std::endl;
+	std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸ Ð³Ð»Ð°Ð²Ñƒ: " << std::endl;
 	char c = tolower(_getch());
 
 	switch (c)
@@ -21,7 +24,7 @@ int main()
 		}
 	default:
 		{
-			std::cout << "Õóéíþ æå ââ¸ë, áëèí... :(" << std::endl;
+			std::cout << "Ð¥ÑƒÐ¹Ð½ÑŽ Ð¶Ðµ Ð²Ð²Ñ‘Ð», Ð±Ð»Ð¸Ð½... :(" << std::endl;
 		}
 	}
 	_getch();
