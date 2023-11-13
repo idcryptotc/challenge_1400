@@ -1,3 +1,4 @@
+.gitignore
 # Prerequisites
 *.d
 
@@ -38,4 +39,4 @@
 /Challenge/Debug
 /Challenge/Challenge/x64
 /Challenge/x64
-.gitignore
+/.gitignore
