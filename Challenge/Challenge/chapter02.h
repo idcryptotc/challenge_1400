@@ -2,14 +2,13 @@
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
-#include <fcntl.h>
-#include <io.h>
-#include <iomanip>
 #include <vector>
 #include <functional>
 #include <string>
+#include <fcntl.h>
+#include <io.h>
 
-class chapter01
+class chapter02
 {
 public:
 	static void startFunction();
@@ -30,5 +29,26 @@ public:
 	static void solution15();
 	static void solution16();
 	static void solution17();
+	static void solution18();
+	static void solution19();
+	static void solution20();
+	static void solution21();
+	static void solution22();
+	static void solution23();
+	static void solution24();
+	static void solution25();
+	static void solution26();
+	static void solution27();
+	static void solution28();
+	static void solution29();
+	static void solution30();
+	static void solution31();
+	static void solution32();
+	static void solution33();
+	static void solution34();
+	static void solution35();
+	static void solution36();
+	static void solution37();
+	static void solution38();
 };
 

@@ -12,6 +12,7 @@ int main()
 	std::cout << "Тебе придётся каким-то образом что-то выбирать и даже что-то вводить" << std::endl;
 	std::cout << "Содержание:" << std::endl;
 	std::cout << "Глава 1" << std::endl;
+	std::cout << "Глава 2" << std::endl;
 	std::cout << "Выбери главу: " << std::endl;
 	char c = tolower(_getch());
 
@@ -20,6 +21,11 @@ int main()
 	case '1':
 		{
 			chapter01::startFunction();
+			break;
+		}
+	case '2':
+		{
+			chapter02::startFunction();
 			break;
 		}
 	default:
