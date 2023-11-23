@@ -444,7 +444,7 @@ void chapter02::solution20()
     _setmode(_fileno(stdout), _O_U16TEXT);
     std::wcout
         << L"       --------------" << '\n'
-        << L"      /|     3 |³                                    33g"<< '\n'
+        << L"      /|     3 |³                                    33g" << '\n'
         << L"a =  / |e - ---| + g , b = sin(e) + cos²(h) и c = --------" << '\n'
         << L"    √  |     f |                                   ef - 3" << '\n';
     _setmode(_fileno(stdout), _O_TEXT);
@@ -486,46 +486,184 @@ void chapter02::solution21()
 
 void chapter02::solution22()
 {
+    std::cout << "Введите два числа: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Среднее арифметическое модулей: " << (abs(a) + abs(b)) / 2 << '\n';
+        std::cout << "Среднее геометрическое модулей: " << pow(abs(a * b), 1.0 / 2) << '\n';
+    }
 }
 
 void chapter02::solution23()
 {
+    std::cout << "Введите длины сторон прямоугольника: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Периметр: " << (a + b) * 2 << '\n';
+        std::cout << "Длина диагонали: " << sqrt(a * a + b * b) << '\n';
+    }
 }
 
 void chapter02::solution24()
 {
+    std::cout << "Введите два числа: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Сумма: " << a + b << '\n';
+        std::cout << "Разность: " << a - b << '\n';
+        std::cout << "Произведение: " << a * b << '\n';
+        std::cout << "Частное: " << a / b << '\n';
+    }
 }
 
 void chapter02::solution25()
 {
+    std::cout << "Введите длины сторон прямоугольного параллелепипеда: ";
+    double a, b, h;
+    std::cin >> a >> b >> h;
+
+    if (checkInput())
+    {
+        std::cout << "Объём: " << a * b * h << '\n';
+        std::cout << "Площадь боковой поверхности: " << (a + b) * h * 2 << '\n';
+    }
 }
 
 void chapter02::solution26()
 {
+    std::cout << "Введите координаты двух точек на плоскости (x1 y1 x2 y2): ";
+    double x1, y1, x2, y2;
+    std::cin >> x1 >> y1 >> x2 >> y2;
+
+    if (checkInput())
+    {
+        std::cout << "Расстояние мехду точками: "
+            << sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)) << '\n';
+    }
 }
 
 void chapter02::solution27()
 {
+    solution17();   // типичная проблема задачников - дублирование
 }
 
 void chapter02::solution28()
 {
+    std::cout << "Введите основание1 и основание2 равнобедренной трапеции и угол при большем основании: ";
+    double base1, base2, angle;
+    std::cin >> base1 >> base2 >> angle;
+
+    if (checkInput())
+    {
+        std::cout << "Площадь трапеции: "
+            << (base2 * base2 - base1 * base1) / 4 * tan(angle * M_PI / 180)
+            << '\n';
+    }
 }
 
 void chapter02::solution29()
 {
+    std::cout << "Введите координаты трёх точек (x1 y1 x2 y2 x3 y3): ";
+    double x1, y1, x2, y2, x3, y3;
+    std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+
+    if (checkInput())
+    {
+        double a = distance(x1, x2, y1, y2);
+        double b = distance(x2, x3, y2, y3);
+        double c = distance(x3, x1, y3, y1);
+        std::cout << "Периметр треугольника: " << a + b + c << '\n';
+        double p = (a + b + c) / 2;
+        std::cout << "Площадь треугольника: " << sqrt(p * (p - a) * (p - b) * (p - c)) << '\n';
+    }
 }
 
 void chapter02::solution30()
 {
+    std::cout << "Введите координаты вершин выпуклого четырёхугольника\n(x1 y1 x2 y2 x3 y3 x4 y4): ";
+    double x1, y1, x2, y2, x3, y3, x4, y4;
+    std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> x4 >> y4;
+
+    if (checkInput())
+    {
+        if (!convex(x1, y1, x2, y2, x3, y3, x4, y4, x1, y1))
+        {
+            std::cout << "Не выпуклый\n";
+        }
+        else
+        {
+            double a = distance(x1, x2, y1, y2);
+            double b = distance(x2, x3, y2, y3);
+            double c = distance(x3, x4, y3, y4);
+            double d = distance(x4, x1, y4, y1);
+            double diag = distance(x2, x4, y2, y4);
+            double p1 = (a + b + diag) / 2;
+            double p2 = (c + d + diag) / 2;
+            double s1 = sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - diag));
+            double s2 = sqrt(p2 * (p2 - c) * (p2 - d) * (p2 - diag));
+            std::cout << "Площадь треугольника1: " << s1 << '\n';
+            std::cout << "Площадь треугольника2: " << s2 << '\n';
+            std::cout << "Площадь четырёхугольника: " << s1 + s2 << '\n';
+        }
+    }
 }
 
 void chapter02::solution31()
 {
+    std::cout << "Введите стоимость 1 кг конфет, печенья и яблок: ";
+    double candies, cookies, apples;
+    std::cin >> candies >> cookies >> apples;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Введите количество купленных конфет, печенья и яблок (в кг): ";
+    double x, y, z;
+    std::cin >> x >> y >> z;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Стоимость покупки: " << x * candies + y * cookies + z * apples << '\n';
 }
 
 void chapter02::solution32()
 {
+    std::cout << "Введите стоимость монитора, системного блока, клавиатуры и мыши:\n";
+    double monic, block, keyb, mouse;
+    std::cin >> monic >> block >> keyb >> mouse;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    double cost = monic + block + keyb + mouse;
+    std::cout << "Стоимость 3 компов: " << 3 * cost << '\n';
+
+    std::cout << "Введите количество купленных компьютеров: ";
+    int n;
+    std::cin >> n;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Стоимость покупки " << n << " компов: " << n * cost << '\n';
 }
 
 void chapter02::solution33()

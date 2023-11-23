@@ -50,5 +50,58 @@ public:
 	static void solution36();
 	static void solution37();
 	static void solution38();
+
+	template<typename ...Arg>
+	static double distance(Arg ...arg)
+	{
+		return sqrt(sum(arg...));
+	}
+
+	template<typename X1, typename X2, typename ...Rest>
+	static double sum(X1 x1, X2 x2, Rest ...rest)
+	{
+		return pow(x2 - x1, 2) + sum(rest...);
+	}
+
+	template<typename X1, typename X2>
+	static double sum(X1 x1, X2 x2)
+	{
+		return pow(x2 - x1, 2);
+	}
+
+	struct Vector
+	{
+		double x;
+		double y;
+	};
+
+	template<typename ...Arg>
+	static bool convex(Arg ...arg)
+	{
+		int result = foo(arg...);
+		return result > 0 || result % 1000000 == 0;
+	}
+
+	static Vector getVector(double x1, double y1, double x2, double y2)
+	{
+		return { x2 - x1, y2 - y1 };
+	}
+
+	static int getSign(Vector v1, Vector v2)
+	{
+		int result = static_cast<int>(v1.x * v2.y - v1.y * v2.x);
+		return result > 0 ? 1 : result < 0 ? -1000000 : 0;
+	}
+
+	template<typename ...Rest>
+	static int foo(double x1, double y1, double x2, double y2, double x3, double y3, Rest ...rest)
+	{
+		return getSign(getVector(x1, y1, x2, y2), getVector(x2, y2, x3, y3)) + foo(x2, y2, x3, y3, rest...);
+	}
+
+	static int foo(double x1, double y1, double x2, double y2, double x3, double y3)
+	{
+		return getSign(getVector(x1, y1, x2, y2), getVector(x2, y2, x3, y3));
+	}
 };
 
