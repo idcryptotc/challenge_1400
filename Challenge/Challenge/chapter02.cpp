@@ -463,6 +463,25 @@ void chapter02::solution20()
 
 void chapter02::solution21()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout
+        << L"          f" << '\n'
+        << L"     e + ---" << '\n'
+        << L"          2                        ------------------" << '\n'
+        << L"a = ---------, b = |h² - g| и c = √(g - h)² - 3sin(e)" << '\n'
+        << L"        3" << '\n';
+    _setmode(_fileno(stdout), _O_TEXT);
+    std::cout << "Введите e, f, g и h: ";
+    double e, f, g, h;
+    std::cin >> e >> f >> g >> h;
+
+    if (checkInput())
+    {
+        std::cout
+            << "a = " << (e + f / 2) / 3 << '\n'
+            << "b = " << abs(h * h - g) << '\n'
+            << "c = " << sqrt(pow(g - h, 2) - 3 * sin(e * M_PI / 180)) << '\n';
+    }
 }
 
 void chapter02::solution22()
