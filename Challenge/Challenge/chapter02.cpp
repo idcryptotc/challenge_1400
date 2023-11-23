@@ -266,46 +266,199 @@ void chapter02::solution09()
 
 void chapter02::solution10()
 {
+    std::cout << "Введите два целых числа: ";
+    int a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Среднее арифметическое: " << (a + b) / 2.0 << '\n';
+        std::cout << "Среднее геометрическое: " << pow(a * b, 1 / 2.0) << '\n';
+    }
 }
 
 void chapter02::solution11()
 {
+    double v, m;
+    std::cout << "Введите объём: ";
+    std::cin >> v;
+    std::cout << "Введите массу: ";
+    std::cin >> m;
+
+    if (checkInput())
+    {
+        std::cout << "Плотность: " << m / v << '\n';
+    }
 }
 
 void chapter02::solution12()
 {
+    int n;
+    double s;
+    std::cout << "Введите количество жителей: ";
+    std::cin >> n;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Введите площадь территории: ";
+    std::cin >> s;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Плотность населения: " << (int)((n / s) + 0.5) << '\n';
 }
 
 void chapter02::solution13()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout << L"ax + b = 0, a ≠ 0\n";
+    _setmode(_fileno(stdout), _O_TEXT);
+    double a, b;
+    std::cout << "Введите a и b: ";
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        if (a < 0.00001)
+        {
+            std::cout << "На 0 делить не стоит\n";
+        }
+        else
+        {
+            std::cout << "x: " << (-b / a) << '\n';
+        }
+    }
 }
 
 void chapter02::solution14()
 {
+    std::cout << "Введите длины катетов a и b: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Гипотенуза: " << sqrt(a * a + b * b) << '\n';
+    }
 }
 
 void chapter02::solution15()
 {
+    std::cout << "Введите внешний и внутренний радиусы: ";
+    double R, r;
+    std::cin >> R >> r;
+
+    if (checkInput())
+    {
+        if (R < r)
+        {
+            std::cout << "Впуклое кольцо с отрицательной площадью\n";
+        }
+
+        std::cout << "Площадь кольца: " << (M_PI * (R * R - r * r)) << '\n';
+    }
 }
 
 void chapter02::solution16()
 {
+    std::cout << "Введите длины катетов a и b: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "Периметр треугольника: " << sqrt(a * a + b * b) + a + b << '\n';
+    }
 }
 
 void chapter02::solution17()
 {
+    std::cout << "Введите основание1, основание2 и высоту равнобедренной трапеции: ";
+    double base1, base2, height;
+    std::cin >> base1 >> base2 >> height;
+
+    if (checkInput())
+    {
+        std::cout << "Периметр трапеции: "
+            << base1 + base2 + 2 * sqrt(height * height + (base1 - base2) * (base1 - base2) / 4)
+            << '\n';
+    }
 }
 
 void chapter02::solution18()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout
+        << L"             2 + y" << '\n'
+        << L"        x + -------" << '\n'
+        << L"               x²" << '\n'
+        << L"z = ------------------ и q = 7.25sin(x) - |y|" << '\n'
+        << L"               1" << '\n'
+        << L"     y + ------------" << '\n'
+        << L"          √(x² + 10)" << '\n';
+    _setmode(_fileno(stdout), _O_TEXT);
+    std::cout << "Введите x и y: ";
+    double x, y;
+    std::cin >> x >> y;
+
+    if (checkInput())
+    {
+        std::cout
+            << "z = " << (x + (2 + y) / (x * x)) / (y + 1 / (sqrt(x * x + 10))) << '\n'
+            << "q = " << 7.25 * sin(x * M_PI / 180) - abs(y) << '\n';
+    }
 }
 
 void chapter02::solution19()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout
+        << L"          2" << '\n'
+        << L"     --------- + b" << '\n'
+        << L"      a² + 25              |a| + 2sin(b)" << '\n'
+        << L"x = --------------- и y = ---------------" << '\n'
+        << L"           a + b                5.5a" << '\n'
+        << L"     √b + -------" << '\n'
+        << L"             2" << '\n';
+    _setmode(_fileno(stdout), _O_TEXT);
+    std::cout << "Введите a и b: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout
+            << "x = " << (2 / (a * a + 25) + b) / (sqrt(b) + (a + b) / 2) << '\n'
+            << "y = " << (abs(a) + 2 * sin(b * M_PI / 180)) / (5.5 * a) << '\n';
+    }
 }
 
 void chapter02::solution20()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout
+        << L"       --------------" << '\n'
+        << L"      /|     3 |³                                    33g"<< '\n'
+        << L"a =  / |e - ---| + g , b = sin(e) + cos²(h) и c = --------" << '\n'
+        << L"    √  |     f |                                   ef - 3" << '\n';
+    _setmode(_fileno(stdout), _O_TEXT);
+    std::cout << "Введите e, f, g и h: ";
+    double e, f, g, h;
+    std::cin >> e >> f >> g >> h;
+
+    if (checkInput())
+    {
+        std::cout
+            << "a = " << sqrt(pow(abs(e - 3 / f), 3) + g) << '\n'
+            << "b = " << sin(e * M_PI / 180) + pow(cos(h * M_PI / 180), 2) << '\n'
+            << "c = " << (33 * g) / (e * f - 3) << '\n';
+    }
 }
 
 void chapter02::solution21()
