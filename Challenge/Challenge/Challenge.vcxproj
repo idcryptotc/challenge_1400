@@ -143,12 +143,14 @@
   <ItemGroup>
     <ClCompile Include="chapter01.cpp" />
     <ClCompile Include="chapter02.cpp" />
+    <ClCompile Include="chapter03.cpp" />
     <ClCompile Include="checker.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chapter01.h" />
     <ClInclude Include="chapter02.h" />
+    <ClInclude Include="chapter03.h" />
     <ClInclude Include="checker.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

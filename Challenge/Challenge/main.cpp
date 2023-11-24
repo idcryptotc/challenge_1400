@@ -13,6 +13,7 @@ int main()
 	std::cout << "Содержание:" << std::endl;
 	std::cout << "Глава 1" << std::endl;
 	std::cout << "Глава 2" << std::endl;
+	std::cout << "Глава 3" << std::endl;
 	std::cout << "Выбери главу: " << std::endl;
 	char c = tolower(_getch());
 
@@ -26,6 +27,11 @@ int main()
 	case '2':
 		{
 			chapter02::startFunction();
+			break;
+		}
+	case '3':
+		{
+			chapter03::startFunction();
 			break;
 		}
 	default:
