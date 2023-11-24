@@ -668,24 +668,94 @@ void chapter02::solution32()
 
 void chapter02::solution33()
 {
+    std::cout << "Введите возраст Тани: ";
+    int ageTanya;
+    std::cin >> ageTanya;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Введите возраст Мити: ";
+    int ageMitya;
+    std::cin >> ageMitya;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    double avgAge = (ageMitya + ageTanya) / 2.;
+    std::cout << "Средний возраст: " << avgAge << '\n';
+    std::cout << "Возраст Тани отличается от среднего на " << abs(avgAge - ageTanya) << " года (год, лет)\n";
+    std::cout << "Возраст Мити отличается от среднего на " << abs(avgAge - ageMitya) << " года (год, лет)\n";
 }
 
 void chapter02::solution34()
 {
+    std::cout << "Введите скорости 1 и 2 автомобилей (км/ч) и расстояние между ними (км):\n";
+    double v1, v2, s;
+    std::cin >> v1 >> v2 >> s;
+
+    if (checkInput())
+    {
+        std::cout << "Автомобили встретятся через: " << s / (v1 + v2) << " час (часа, часов)\n";
+    }
 }
 
 void chapter02::solution35()
 {
+    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wcout << L"Введите скорости (км/ч) 1 и 2 (V₁ > V₂) автомобилей\nи расстояние (км), на которое первый опережает второй:\n";
+    _setmode(_fileno(stdout), _O_TEXT);
+    double v1, v2, s;
+    std::cin >> v1 >> v2 >> s;
+
+    if (checkInput())
+    {
+        if (v1 <= v2)
+        {
+            std::cout << "Первый автомобиль не догонит второй\n";
+        }
+        else
+        {
+            std::cout << "Расстояние между автомобилями через 30 минут: " << s + 0.5 * (v1 - v2) << " км\n";
+        }
+    }
 }
 
 void chapter02::solution36()
 {
+    std::cout << "Введите температуру (°C): ";
+    double degree;
+    std::cin >> degree;
+
+    if (checkInput())
+    {
+        std::cout << "Это " << degree * 1.8 + 32 << "°F\n";
+        std::cout << "Это " << degree - 273.15 << "°K\n";
+    }
 }
 
 void chapter02::solution37()
 {
+    std::cout << "450 градусов по Фаренгейту\n";
+    std::cout << "Это " << (450 - 32) / 1.8 << "°C\n";
 }
 
 void chapter02::solution38()
 {
+    std::cout << "Введите 2 целых числа: ";
+    int a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::string result;
+        std::format_to(std::back_inserter(result)
+            , "{0} + {1} = {2}\n{0} - {1} = {3}\n{0} * {1} = {4}\n{0} / {1} = {5}\n({0} + {1}) / 2 = {6}\n"
+            , a, b, a + b, a - b, a * b, (double)a / b, (a + b) / 2.);
+        std::cout << result;
+    }
 }
