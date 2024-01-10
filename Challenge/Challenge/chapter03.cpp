@@ -65,8 +65,8 @@ void chapter03::startFunction()
     while (true)
     {
         system("cls");
-        std::cout << "Глава 3. Целочисленная арифметика" << std::endl;
-        std::cout << "Введи число от 1 до 51" << std::endl;
+        std::cout << "Глава 3. Целочисленная арифметика\n";
+        std::cout << "Введи число от 1 до 51\n";
         int n;
 
         try
@@ -81,7 +81,7 @@ void chapter03::startFunction()
 
             if (n < 1 || n > 51)
             {
-                std::cout << "Ты что, дурной?" << std::endl;
+                std::cout << "Ты что, дурной?\n";
                 Sleep(1000);
                 continue;
             }
@@ -93,7 +93,7 @@ void chapter03::startFunction()
         }
         catch (...)
         {
-            std::cout << "Чё? Чё-то не то..." << std::endl;
+            std::cout << "Чё? Чё-то не то...\n";
             Sleep(1000);
         }
         _getch();

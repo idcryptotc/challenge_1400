@@ -30,8 +30,8 @@ void chapter01::startFunction()
     while (true)
     {
         system("cls");
-        std::cout << "Глава 1. Вывод информации на экран" << std::endl;
-        std::cout << "Введи число от 1 до 17" << std::endl;
+        std::cout << "Глава 1. Вывод информации на экран\n";
+        std::cout << "Введи число от 1 до 17\n";
         int n;
 
         try
@@ -46,7 +46,7 @@ void chapter01::startFunction()
 
             if (n < 1 || n > 17)
             {
-                std::cout << "Ты что, дурной?" << std::endl;
+                std::cout << "Ты что, дурной?\n";
                 Sleep(1000);
                 continue;
             }
@@ -58,7 +58,7 @@ void chapter01::startFunction()
         }
         catch (...)
         {
-            std::cout << "Чё? Чё-то не то..." << std::endl;
+            std::cout << "Чё? Чё-то не то...\n";
             Sleep(1000);
         }
         _getch();
