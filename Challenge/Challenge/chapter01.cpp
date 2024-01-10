@@ -58,7 +58,7 @@ void chapter01::startFunction()
         }
         catch (...)
         {
-            std::cout << "Чё? Мозг проебал?" << std::endl;
+            std::cout << "Чё? Чё-то не то..." << std::endl;
             Sleep(1000);
         }
         _getch();

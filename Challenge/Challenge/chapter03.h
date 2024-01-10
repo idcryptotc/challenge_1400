@@ -9,6 +9,7 @@
 #include <vector>
 #include <functional>
 #include <string>
+#include <map>
 
 class chapter03
 {

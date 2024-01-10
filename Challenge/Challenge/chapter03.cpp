@@ -93,7 +93,7 @@ void chapter03::startFunction()
         }
         catch (...)
         {
-            std::cout << "Чё? Мозг проебал?" << std::endl;
+            std::cout << "Чё? Чё-то не то..." << std::endl;
             Sleep(1000);
         }
         _getch();
@@ -260,6 +260,54 @@ void chapter03::solution09()
 
 void chapter03::solution10()
 {
+    enum class days
+    {
+        sunday,
+        monday,
+        tuesday,
+        wednesday,
+        thursday,
+        friday,
+        saturday
+    };
+
+    const std::map<days, std::string> daysDict =
+    {
+        { days::sunday, "воскресенье" },
+        { days::monday, "понедельник" },
+        { days::tuesday, "вторник" },
+        { days::wednesday, "среда" },
+        { days::thursday, "четверг" },
+        { days::friday, "пятница" },
+        { days::saturday, "суббота" }
+    };
+
+    std::cout << "Введите целое число (1 <= k <= 365): ";
+    std::uint32_t k;
+    std::cin >> k;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Введите день начала года (1..7): ";
+    std::uint32_t d;
+    std::cin >> d;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    if (d > 7 || d < 1)
+    {
+        std::cout << "Число не соответствует необходимому диапазону\n";
+    }
+    else
+    {
+        std::cout << "Выбран день: " << daysDict.at((days)((k + d % 7 - 1) % 7)) << '\n';
+    }
 }
 
 void chapter03::solution11()
