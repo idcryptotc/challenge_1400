@@ -351,6 +351,30 @@ void chapter03::solution12()
 
 void chapter03::solution13()
 {
+    enum class data : int
+    {
+        count_rows = 10,
+        count_columns = 5
+    };
+
+    std::cout << "Введите номер ячейки: ";
+    std::uint32_t n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n > (int)data::count_rows * (int)data::count_columns || n == 0)
+        {
+            std::cout << "Попадание в таблицу не зафиксировано\n";
+        }
+        else
+        {
+            int str_num = (n + (int)data::count_columns - 1) / (int)data::count_columns;
+            std::cout << "Ячейка находится в строке: " << str_num << '\n';
+            std::cout << "Номер найденной строки находится в строке: "
+                << (str_num - 1) / (int)data::count_columns + 1 << '\n';
+        }
+    }
 }
 
 void chapter03::solution14()
