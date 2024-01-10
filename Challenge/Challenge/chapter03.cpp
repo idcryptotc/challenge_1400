@@ -105,7 +105,7 @@ void chapter03::solution01()
     std::cout << "Введите расстояние в сантиметрах: ";
     int s;
     std::cin >> s;
-    
+
     if (checkInput())
     {
         std::cout << "Расстояние в метрах: " << s / 100 << '\n';
@@ -379,6 +379,37 @@ void chapter03::solution13()
 
 void chapter03::solution14()
 {
+    enum class data
+    {
+        count_floors = 9,
+        count_flats_on_floor = 6,
+        count_entrance = 4
+    };
+
+    std::cout << "Введите номер квартиры: ";
+    std::uint32_t n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        int count_flats_on_entrance = (int)data::count_flats_on_floor * (int)data::count_floors;
+        std::uint32_t count_flats = count_flats_on_entrance * (int)data::count_entrance;
+
+        if (n == 0 || n > count_flats)
+        {
+            std::cout << "Квартира не в этом доме\n";
+        }
+        else
+        {
+            std::cout << "Квартира находится:\n";
+            int temp = (n - 1) / count_flats_on_entrance + 1;
+            std::cout << "в подъезде: " << temp << '\n';
+            temp = (n - count_flats_on_entrance * (temp - 1));
+            std::cout << "на этаже: " << (temp - 1) / (int)data::count_flats_on_floor + 1 << '\n';
+            temp = temp % (int)data::count_flats_on_floor;
+            std::cout << "по счёту: " << (!temp ? (int)data::count_flats_on_floor : temp) << '\n';
+        }
+    }
 }
 
 void chapter03::solution15()
