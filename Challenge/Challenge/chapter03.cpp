@@ -326,6 +326,27 @@ void chapter03::solution11()
 
 void chapter03::solution12()
 {
+    enum class data
+    {
+        count_floors = 5,
+        count_flats = 20,
+        count_flats_on_floor = (int)count_flats / (int)count_floors
+    };
+
+    std::cout << "¬ведите номер квартиры: ";
+    std::uint32_t n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        int num = n % (int)data::count_flats_on_floor;
+        std::cout
+            << " вартира находитс€ на "
+            << (n + (int)data::count_flats_on_floor - 1) / (int)data::count_floors + 1
+            << " этаже\nи €вл€етс€ "
+            << (!num ? (int)data::count_flats_on_floor : num)
+            << " по счЄту\n";
+    }
 }
 
 void chapter03::solution13()
