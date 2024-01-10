@@ -212,10 +212,50 @@ void chapter03::solution07()
 
 void chapter03::solution08()
 {
+    enum class data
+    {
+        count_rows = 20,
+        count_places = 15,
+        start_number = 1643
+    };
+
+    const std::string serial = "AB0";
+    std::cout << "Введите серийный номер: " << serial;
+    unsigned int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < (int)data::start_number)
+        {
+            std::cout << "Ваш билет просрочен\n";
+        }
+        else if (n >= (int)data::start_number + (int)data::count_rows * (int)data::count_places)
+        {
+            std::cout << "Сейчас не ваш сеанс\n";
+        }
+        else
+        {
+            std::cout
+                << "Ваш ряд: "
+                << (n - (int)data::start_number + (int)data::count_places) / (int)data::count_places
+                << '\n';
+        }
+    }
 }
 
 void chapter03::solution09()
 {
+    std::cout << "Введите количество секунд: ";
+    std::uint32_t n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        n %= 24 * 60 * 60;
+        std::string time = std::format("{0:02} : {1:02} : {2:02}", n / 3600, n / 60 % 60, n % 60);
+        std::cout << "Время: " << time << '\n';
+    }
 }
 
 void chapter03::solution10()
