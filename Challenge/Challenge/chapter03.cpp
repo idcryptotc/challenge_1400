@@ -312,6 +312,16 @@ void chapter03::solution10()
 
 void chapter03::solution11()
 {
+    int start_year = 1990;
+    std::cout << "¬ведите количество мес€цев: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        int x = (1 + n) % 12;
+        std::cout << "»тоговый мес€ц: " << (!x ? 12 : x) << '\n';
+    }
 }
 
 void chapter03::solution12()
