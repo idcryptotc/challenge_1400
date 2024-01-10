@@ -8,37 +8,44 @@
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	std::cout << "Hello, Хер с горы! здесь будет куча скучных задач...\nнахуяренных в консоли :)" << std::endl;
-	std::cout << "Тебе придётся каким-то образом что-то выбирать и даже что-то вводить" << std::endl;
-	std::cout << "Содержание:" << std::endl;
-	std::cout << "Глава 1" << std::endl;
-	std::cout << "Глава 2" << std::endl;
-	std::cout << "Глава 3" << std::endl;
-	std::cout << "Выбери главу: " << std::endl;
-	char c = tolower(_getch());
+	std::cout << "Hello, Друг! здесь будет куча скучных задач...\nсделанных в консоли :)\n";
+	std::cout << "Тебе придётся каким-то образом что-то выбирать и даже что-то вводить\n";
+	char c = 0;
 
-	switch (c)
+	while (c != 'z')
 	{
-	case '1':
+		std::cout << "Содержание:\n";
+		std::cout << "Глава 1\n";
+		std::cout << "Глава 2\n";
+		std::cout << "Глава 3\n";
+		std::cout << "Для выхода жми чё-нибудь\n";
+		std::cout << "Выбери главу: \n";
+		c = tolower(_getch());
+
+		switch (c)
 		{
-			chapter01::startFunction();
-			break;
+			case '1':
+			{
+				chapter01::startFunction();
+				break;
+			}
+			case '2':
+			{
+				chapter02::startFunction();
+				break;
+			}
+			case '3':
+			{
+				chapter03::startFunction();
+				break;
+			}
+			default:
+			{
+				return 0;
+			}
 		}
-	case '2':
-		{
-			chapter02::startFunction();
-			break;
-		}
-	case '3':
-		{
-			chapter03::startFunction();
-			break;
-		}
-	default:
-		{
-			std::cout << "Хуйню же ввёл, блин... :(" << std::endl;
-		}
+
+		_getch();
+		system("cls");
 	}
-	_getch();
-	return 0;
 }

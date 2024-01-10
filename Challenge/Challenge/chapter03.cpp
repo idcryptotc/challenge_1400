@@ -102,30 +102,112 @@ void chapter03::startFunction()
 
 void chapter03::solution01()
 {
+    std::cout << "Введите расстояние в сантиметрах: ";
+    int s;
+    std::cin >> s;
+    
+    if (checkInput())
+    {
+        std::cout << "Расстояние в метрах: " << s / 100 << '\n';
+    }
 }
 
 void chapter03::solution02()
 {
+    std::cout << "Введите массу в килограммах: ";
+    int m;
+    std::cin >> m;
+
+    if (checkInput())
+    {
+        std::cout << "Число полных центнеров: " << m / 100 << '\n';
+    }
 }
 
 void chapter03::solution03()
 {
+    std::cout << "234 дня - это " << 234 / 7 << " полных недель\n";
 }
 
 void chapter03::solution04()
 {
+    std::cout << "Введите количество школьников: ";
+    unsigned int n = 0u;
+    std::cin >> n;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Введите количество яблок: ";
+    unsigned int k = 0u;
+    std::cin >> k;
+
+    if (!checkInput())
+    {
+        return;
+    }
+
+    std::cout << "Каждый школьник получит яблок: " << k / n << '\n';
+    std::cout << "В корзинке останется яблок: " << k % n << '\n';
 }
 
 void chapter03::solution05()
 {
+    std::cout
+        << "Прямоугольник 543х130 можно разделить\nна "
+        << 543 / 130
+        << " квадратов со стороной 130\n";
 }
 
 void chapter03::solution06()
 {
+    const int COUNT_COUPE = 9;
+    const int COUNT_PLACE = 4;
+    std::cout << "Введите номер места: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n <= COUNT_COUPE * COUNT_PLACE)
+        {
+            std::cout << "Ваше купе №" << n / COUNT_PLACE + 1 << '\n';
+        }
+        else
+        {
+            std::cout << "Ваше место в другом вагоне\n";
+        }
+    }
 }
 
 void chapter03::solution07()
 {
+    enum class data
+    {
+        count_floor = 5,
+        count_flat = 15,
+        count_flat_on_floor = (int)data::count_flat / (int)data::count_floor
+    };
+
+    std::cout << "Введите номер квартиры: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n <= (int)data::count_flat)
+        {
+
+            int floor = (n + (int)data::count_flat_on_floor - 1) / (int)data::count_flat_on_floor;
+            std::cout << "Ваш этаж: " << floor << '\n';
+        }
+        else
+        {
+            std::cout << "Ваша квартира не в этом подъезде\n";
+        }
+    }
 }
 
 void chapter03::solution08()
