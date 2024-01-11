@@ -931,14 +931,70 @@ void chapter03::solution41()
 
 void chapter03::solution42()
 {
+    std::cout << "Введите a2, a1, b: ";
+    int a2, a1, b;
+    std::cin >> a2 >> a1 >> b;
+
+    if (checkInput())
+    {
+        int c2 = a2 + (a1 + b) / 10;
+        int c1 = (a1 + b) % 10;
+
+        if (c2 / 10 > 0)
+        {
+            std::cout << "Что-то не то...\n";
+        }
+        else
+        {
+            std::cout << "Результат: " << c2 << " и " << c1 << '\n';
+        }
+    }
 }
 
 void chapter03::solution43()
 {
+    std::cout << "Введите a2, a1, b2, b1: ";
+    int a2, a1, b2, b1;
+    std::cin >> a2 >> a1 >> b2 >> b1;
+
+    if (checkInput())
+    {
+        int c2 = a2 + b2 + (a1 + b1) / 10;
+        int c1 = (a1 + b1) % 10;
+
+        if (c2 / 10 > 0)
+        {
+            std::cout << "Что-то не то...\n";
+        }
+        else
+        {
+            std::cout << "Результат: " << c2 << " и " << c1 << '\n';
+        }
+    }
 }
 
 void chapter03::solution44()
 {
+    std::cout << "Введите a3, a2, a1, b2, b1: ";
+    int a3, a2, a1, b2, b1;
+    std::cin >> a3 >> a2 >> a1 >> b2 >> b1;
+
+    if (checkInput())
+    {
+        int c2 = a2 + b2 + (a1 + b1) / 10;
+        int c3 = a3 + c2 / 10;
+        c2 %= 10;
+        int c1 = (a1 + b1) % 10;
+
+        if (c2 / 10 > 0)
+        {
+            std::cout << "Что-то не то...\n";
+        }
+        else
+        {
+            std::cout << "Результат: " << c3 << ", " << c2 << " и " << c1 << '\n';
+        }
+    }
 }
 
 void chapter03::solution45()
