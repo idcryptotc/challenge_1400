@@ -840,6 +840,21 @@ void chapter03::solution34()
 
 void chapter03::solution35()
 {
+    std::cout << "Введите трёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 1 || n > 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: n = " << n % 10 * 100 + n / 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution36()
