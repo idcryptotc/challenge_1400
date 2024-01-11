@@ -414,6 +414,43 @@ void chapter03::solution14()
 
 void chapter03::solution15()
 {
+    enum class data
+    {
+        count_levels = 10,
+        count_sections_on_level = 8,
+        count_places_on_section = 15,
+        count_places_on_level = count_sections_on_level * count_places_on_section,
+        count_places_all = count_places_on_level * count_levels,
+        count_places_on_section_v2 = count_levels * count_places_on_section
+    };
+
+    std::cout << "Введите номер места: ";
+    std::uint32_t n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n == 0 || n > (std::uint32_t)data::count_places_all)
+        {
+            std::cout << "Не тот стеллаж\n";
+        }
+        else
+        {
+            std::cout << "Товар находится:\n";
+            std::uint32_t temp1{ (n - 1) / (std::uint32_t)data::count_places_on_level + 1 };
+            std::uint32_t temp2{ n % (std::uint32_t)data::count_places_on_level };
+            std::uint32_t temp3{ !temp2 ? (std::uint32_t)data::count_places_on_level : temp2 };
+            std::uint32_t temp4{ (temp3 - 1) / (std::uint32_t)data::count_places_on_section + 1 };
+            std::string str = std::format("Секция {1} ярус {0}\n", temp1, temp4);
+            std::cout << "1: " << str;
+            
+            temp1 = (n - 1) / (std::uint32_t)data::count_places_on_section_v2 + 1;
+            temp2 = n % (std::uint32_t)data::count_levels;
+            temp3 = !temp2 ? (std::uint32_t)data::count_levels : temp2;
+            str = std::format("Секция {0} ярус {1}\n", temp1, temp3);
+            std::cout << "2: " << str;
+        }
+    }
 }
 
 void chapter03::solution16()
