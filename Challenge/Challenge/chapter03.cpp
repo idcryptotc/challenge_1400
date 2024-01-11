@@ -883,10 +883,26 @@ void chapter03::solution37()
 
 void chapter03::solution38()
 {
+    std::cout << "Результат: x = " << 456 % 10 * 10 + 456 / 10 % 10 + 456 / 100 * 100 << '\n';
 }
 
 void chapter03::solution39()
 {
+    std::cout << "Введите трёхзначное число (100 <= n <= 999): ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 100 || n > 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: x = " << n % 10 * 10 + n / 10 % 10 + n / 100 * 100 << '\n';
+        }
+    }
 }
 
 void chapter03::solution40()
