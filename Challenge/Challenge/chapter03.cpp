@@ -907,10 +907,26 @@ void chapter03::solution39()
 
 void chapter03::solution40()
 {
+    std::cout << "Результат: x = " << 654 / 100 + 654 % 10 * 100 + 654 / 10 % 10 * 10 << '\n';
 }
 
 void chapter03::solution41()
 {
+    std::cout << "Введите трёхзначное число (1 <= n <= 999): ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 1 || n > 999 || n % 10 == 0)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: x = " << n / 100 + n % 10 * 100 + n / 10 % 10 * 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution42()
