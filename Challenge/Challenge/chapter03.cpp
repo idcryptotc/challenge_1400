@@ -598,6 +598,22 @@ void chapter03::solution22()
 
 void chapter03::solution23()
 {
+    std::cout << "Введите трёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 100 || n > 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string str = std::format("{2}{0}{1}\n", n / 100, n / 10 % 10, n % 10);
+            std::cout << "Результат: " << str;
+        }
+    }
 }
 
 void chapter03::solution24()
