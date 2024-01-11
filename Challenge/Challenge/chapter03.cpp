@@ -455,6 +455,21 @@ void chapter03::solution15()
 
 void chapter03::solution16()
 {
+    std::cout << "Введите двузначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 10 || n > 99)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Десятков: " << n / 10 << "\nЕдиниц: " << n % 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution17()
