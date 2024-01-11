@@ -687,8 +687,51 @@ void chapter03::solution26()
     }
 }
 
+int chapter03::sumNumbers(int n)
+{
+    int sum = 0;
+
+    while (n > 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    return sum;
+}
+
 void chapter03::solution27()
 {
+    std::cout << "Введите четырёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 1000 || n > 9999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: " << sumNumbers(n) << '\n';
+        }
+    }
+
+    std::cout << "Введите пятизначное число: ";
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 10000 || n > 99999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: " << sumNumbers(n) << '\n';
+        }
+    }
 }
 
 void chapter03::solution28()

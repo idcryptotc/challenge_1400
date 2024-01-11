@@ -66,5 +66,7 @@ public:
 	static void solution49();
 	static void solution50();
 	static void solution51();
+private:
+	static int sumNumbers(int n);
 };
 
