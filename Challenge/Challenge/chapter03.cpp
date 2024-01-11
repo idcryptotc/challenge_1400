@@ -474,6 +474,14 @@ void chapter03::solution16()
 
 void chapter03::solution17()
 {
+    std::cout << "¬ведите двузначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        std::cout << "—умма цифр: " << n / 10 + n % 10 << '\n';
+    }
 }
 
 void chapter03::solution18()
