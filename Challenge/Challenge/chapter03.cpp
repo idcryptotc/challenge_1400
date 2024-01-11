@@ -443,7 +443,7 @@ void chapter03::solution15()
             std::uint32_t temp4{ (temp3 - 1) / (std::uint32_t)data::count_places_on_section + 1 };
             std::string str = std::format("Секция {1} ярус {0}\n", temp1, temp4);
             std::cout << "1: " << str;
-            
+
             temp1 = (n - 1) / (std::uint32_t)data::count_places_on_section_v2 + 1;
             temp2 = n % (std::uint32_t)data::count_levels;
             temp3 = !temp2 ? (std::uint32_t)data::count_levels : temp2;
@@ -532,6 +532,28 @@ void chapter03::solution19()
 
 void chapter03::solution20()
 {
+    std::cout << "Введите трёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 100 || n > 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string str = std::format(
+                "Единиц: {0}\nДесятков: {1}\nСумма цифр: {2}\nПроизведение цифр: {3}\n"
+                , n % 10
+                , n / 10 % 10
+                , n / 100 + n / 10 % 10 + n % 10
+                , n / 100 * (n / 10 % 10) * (n % 10)
+            );
+            std::cout << "Результат:\n" << str;
+        }
+    }
 }
 
 void chapter03::solution21()
