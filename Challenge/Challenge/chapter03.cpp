@@ -859,6 +859,7 @@ void chapter03::solution35()
 
 void chapter03::solution36()
 {
+    std::cout << "Результат: x = " << 546 / 100 * 10 + 546 / 10 % 10 * 100 + 6 << '\n';
 }
 
 void chapter03::solution37()
