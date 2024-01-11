@@ -751,6 +751,22 @@ void chapter03::solution28()
 
 void chapter03::solution29()
 {
+    std::cout << "Введите натуральное число (n > 9): ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n <= 9)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string str = std::format("Единиц: {0}\nДесятков: {1}\n", n % 10, n / 10);
+            std::cout << "Результат:\n" << str;
+        }
+    }
 }
 
 void chapter03::solution30()
