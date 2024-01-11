@@ -811,10 +811,26 @@ void chapter03::solution31()
 
 void chapter03::solution32()
 {
+    std::cout << "Результат: x = " << 237 % 100 * 10 + 237 / 100 << '\n';
 }
 
 void chapter03::solution33()
 {
+    std::cout << "Введите трёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 100 || n > 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат: n = " << n % 10 * 100 + n / 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution34()
