@@ -480,12 +480,34 @@ void chapter03::solution17()
 
     if (checkInput())
     {
-        std::cout << "Сумма цифр: " << n / 10 + n % 10 << '\n';
+        if (n < 10 || n > 99)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Сумма цифр: " << n / 10 + n % 10 << '\n';
+        }
     }
 }
 
 void chapter03::solution18()
 {
+    std::cout << "Введите двузначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 10 || n > 99)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Наоборот: " << n % 10 << n / 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution19()
