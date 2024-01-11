@@ -68,5 +68,6 @@ public:
 	static void solution51();
 private:
 	static int sumNumbers(int n);
+	static int numReverse(int n);
 };
 

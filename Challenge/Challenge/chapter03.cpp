@@ -673,7 +673,7 @@ void chapter03::solution26()
         int n1 = n / 100;
         int n2 = n / 10 % 10;
         int n3 = n % 10;
-        
+
         if (n1 == n2 || n2 == n3 || n3 == n1)
         {
             std::cout << "Некорректный ввод\n";
@@ -685,19 +685,6 @@ void chapter03::solution26()
             , n1, n2, n3);
         std::cout << "Результат:\n" << str;
     }
-}
-
-int chapter03::sumNumbers(int n)
-{
-    int sum = 0;
-
-    while (n > 0)
-    {
-        sum += n % 10;
-        n /= 10;
-    }
-
-    return sum;
 }
 
 void chapter03::solution27()
@@ -736,6 +723,30 @@ void chapter03::solution27()
 
 void chapter03::solution28()
 {
+    std::cout << "Введите четырёхзначное число: ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n < 1000 || n > 9999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Результат:\nНаоборот: " << numReverse(n) << '\n';
+            std::cout << "Перестановки:\n";
+            std::string n_str = std::to_string(n);
+            std::string n_str_result = std::format("{0}{1}{2}{3}", n_str[1], n_str[0], n_str[3], n_str[2]);
+            std::cout << "1-2 и 3-4: " << std::stoi(n_str_result) << '\n';
+            n_str_result = std::format("{0}{1}{2}{3}", n_str[0], n_str[2], n_str[1], n_str[3]);
+            std::cout << "2-3: " << std::stoi(n_str_result) << '\n';
+            n_str_result = std::format("{0}{1}{2}{3}", n_str[2], n_str[3], n_str[0], n_str[1]);
+            std::cout << "12-34: " << std::stoi(n_str_result) << '\n';
+            std::cout << "12-34: " << (n % 100) * 100 + n / 100 << '\n';
+        }
+    }
 }
 
 void chapter03::solution29()
@@ -828,4 +839,31 @@ void chapter03::solution50()
 
 void chapter03::solution51()
 {
+}
+
+int chapter03::sumNumbers(int n)
+{
+    int sum = 0;
+
+    while (n > 0)
+    {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    return sum;
+}
+
+int chapter03::numReverse(int n)
+{
+    int n1 = 0;
+
+    while (n > 0)
+    {
+        n1 *= 10;
+        n1 += n % 10;
+        n /= 10;
+    }
+
+    return n1;
 }
