@@ -763,7 +763,7 @@ void chapter03::solution29()
         }
         else
         {
-            std::string str = std::format("Единиц: {0}\nДесятков: {1}\n", n % 10, n / 10);
+            std::string str = std::format("Единиц: {0}\nДесятков: {1}\n", n % 10, n / 10 % 10);
             std::cout << "Результат:\n" << str;
         }
     }
@@ -771,10 +771,42 @@ void chapter03::solution29()
 
 void chapter03::solution30()
 {
+    std::cout << "Введите натуральное число (n > 99): ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n <= 99)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string str = std::format("Десятков: {0}\nСотен: {1}\n", n / 10 % 10, n / 100 % 10);
+            std::cout << "Результат:\n" << str;
+        }
+    }
 }
 
 void chapter03::solution31()
 {
+    std::cout << "Введите натуральное число (n > 999): ";
+    int n;
+    std::cin >> n;
+
+    if (checkInput())
+    {
+        if (n <= 999)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string str = std::format("Сотен: {0}\nТысяч: {1}\n", n / 100 % 10, n / 1000 % 10);
+            std::cout << "Результат:\n" << str;
+        }
+    }
 }
 
 void chapter03::solution32()
