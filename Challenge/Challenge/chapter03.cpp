@@ -1105,8 +1105,55 @@ void chapter03::solution49()
     }
 }
 
+// Решение содержит много "магических" цифр
+// Где-то это посчитанные углы, где-то расчётные выводы, где-то погрешности
 void chapter03::solution50()
 {
+    std::cout << "Введите h, m: ";
+    std::uint32_t h{}, m{};
+    std::cin >> h >> m;
+
+    if (checkInput())
+    {
+        if (h > 12 || h == 0 || m > 59)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::uint32_t delta{ 0 };
+            int h1{ (int)h }, m1{ (int)m };
+            int h_angle{ (30 * h1 + m1 / 2) % 360 };
+            int m_angle{ (m1 * 6) % 360 };
+
+            while (std::abs(h_angle - m_angle) > 3)
+            {
+                ++delta;
+                ++m1;
+                h1 = (h1 + m1 / 60) % 12;
+                m1 %= 60;
+                h_angle = (30 * h1 + m1 / 2) % 360;
+                m_angle = (m1 * 6) % 360;
+            }
+
+            std::cout << "Стрелки совпадут через " << delta << " минут\n";
+            delta = 0;
+            h1 = h;
+            m1 = m;
+
+            while (!(std::abs(h_angle - m_angle) % 180 < 94 && std::abs(h_angle - m_angle) % 180 > 86))
+            {
+                ++delta;
+                ++m1;
+                h1 = (h1 + m1 / 60) % 12;
+                m1 %= 60;
+                h_angle = (30 * h1 + m1 / 2) % 360;
+                m_angle = (m1 * 6) % 360;
+            }
+
+            std::cout << "Стрелки будут перпендикулярны через " << delta << " минут\n";
+        }
+    }
 }
 
 void chapter03::solution51()
