@@ -1022,6 +1022,25 @@ void chapter03::solution45()
 
 void chapter03::solution46()
 {
+    std::cout << "Введите число (1 <= k <= 150): ";
+    std::uint32_t k;
+    std::cin >> k;
+
+    if (checkInput())
+    {
+        if (k < 1 || k > 150)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::uint32_t temp{ (k + 2) / 3 + 100 };
+            std::cout << "Результат:\n"
+                << "Кратно трём: " << temp % 10 << '\n'
+                << "1, 4, 7, ...: " << temp / 100 << '\n'
+                << "2, 5, 8, ...: " << temp / 10 % 10 << '\n';
+        }
+    }
 }
 
 void chapter03::solution47()
