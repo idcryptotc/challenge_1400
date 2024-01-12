@@ -999,6 +999,25 @@ void chapter03::solution44()
 
 void chapter03::solution45()
 {
+    std::cout << "Введите число (1 <= k <= 180): ";
+    std::uint32_t k;
+    std::cin >> k;
+
+    if (checkInput())
+    {
+        if (k < 1 || k > 180)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::uint32_t temp{ (k + 1) / 2 + 9 };
+            std::cout << "Результат:\n"
+                << "Номер пары: " << temp - 9 << '\n'
+                << "Цифры пары: " << temp / 10 << " и " << temp % 10 << '\n'
+                << "k-я цифра: " << (k % 2 ? temp / 10 : temp % 10) << '\n';
+        }
+    }
 }
 
 void chapter03::solution46()
