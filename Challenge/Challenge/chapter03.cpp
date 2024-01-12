@@ -1045,6 +1045,21 @@ void chapter03::solution46()
 
 void chapter03::solution47()
 {
+    std::cout << "Введите h, m, s: ";
+    std::uint32_t h{}, m{}, s{};
+    std::cin >> h >> m >> s;
+
+    if (checkInput())
+    {
+        if (h > 23 || m > 59 || s > 59)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::cout << "Угол: " << 30. * (h % 12) + m / 2. + s / 120. << " градусов\n";
+        }
+    }
 }
 
 void chapter03::solution48()
