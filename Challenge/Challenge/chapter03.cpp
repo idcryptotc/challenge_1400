@@ -1166,7 +1166,8 @@ void chapter03::solution51()
 
     if (checkInput())
     {
-        std::cout << "Результат: " << (a >= b && a % b == 0 || b > a && b % a == 0 ? 1 : a + b) << '\n';
+        int results[] = { a + b, 1 };
+        std::cout << "Результат: " << results[a >= b && a % b == 0 || b > a && b % a == 0] << '\n';
     }
 }
 
