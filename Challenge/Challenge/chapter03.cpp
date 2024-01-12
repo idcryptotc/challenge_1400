@@ -1064,6 +1064,22 @@ void chapter03::solution47()
 
 void chapter03::solution48()
 {
+    std::cout << "Введите угол (0 <= y < 360): ";
+    std::uint32_t y{};
+    std::cin >> y;
+
+    if (checkInput())
+    {
+        if (y >= 360)
+        {
+            std::cout << "Некорректный ввод\n";
+        }
+        else
+        {
+            std::string time = std::format("{0:02}:{1:02}\n", y / 30, y % 30 * 2);
+            std::cout << "Время: " << time;
+        }
+    }
 }
 
 void chapter03::solution49()
