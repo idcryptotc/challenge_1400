@@ -5,7 +5,7 @@
 
 void chapter01::startFunction()
 {
-    std::vector<std::function<void()>> solutions =
+    static const std::vector<std::function<void()>> solutions =
     {
         nullptr,
         solution01,
@@ -27,11 +27,13 @@ void chapter01::startFunction()
         solution17
     };
 
+    static const std::size_t solutions_size = solutions.size() - 1;
+
     while (true)
     {
         system("cls");
         std::cout << "Глава 1. Вывод информации на экран\n";
-        std::cout << "Введи число от 1 до 17\n";
+        std::cout << "Введи число от 1 до " << solutions_size << '\n';
         int n;
 
         try
@@ -44,7 +46,7 @@ void chapter01::startFunction()
                 std::cin.ignore(32767, '\n');
             }
 
-            if (n < 1 || n > 17)
+            if (n < 1 || n > solutions_size)
             {
                 std::cout << "Ты что, дурной?\n";
                 Sleep(1000);

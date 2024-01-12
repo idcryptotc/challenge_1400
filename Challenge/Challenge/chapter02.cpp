@@ -10,7 +10,7 @@
 
 void chapter02::startFunction()
 {
-    std::vector<std::function<void()>> solutions =
+    static const std::vector<std::function<void()>> solutions =
     {
         nullptr,
         solution01,
@@ -53,11 +53,13 @@ void chapter02::startFunction()
         solution38
     };
 
+    static const std::size_t solutions_size = solutions.size() - 1;
+
     while (true)
     {
         system("cls");
         std::cout << "Глава 2. Вычисления по формулам\n";
-        std::cout << "Введи число от 1 до 38\n";
+        std::cout << "Введи число от 1 до " << solutions_size << '\n';
         int n;
 
         try
@@ -70,7 +72,7 @@ void chapter02::startFunction()
                 std::cin.ignore(32767, '\n');
             }
 
-            if (n < 1 || n > 38)
+            if (n < 1 || n > solutions_size)
             {
                 std::cout << "Ты что, дурной?\n";
                 Sleep(1000);

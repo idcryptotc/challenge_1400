@@ -6,7 +6,7 @@
 
 void chapter03::startFunction()
 {
-    std::vector<std::function<void()>> solutions =
+    static const std::vector<std::function<void()>> solutions =
     {
         nullptr,
         solution01,
@@ -62,11 +62,13 @@ void chapter03::startFunction()
         solution51
     };
 
+    static const std::size_t solutions_size = solutions.size() - 1;
+
     while (true)
     {
         system("cls");
         std::cout << "Глава 3. Целочисленная арифметика\n";
-        std::cout << "Введи число от 1 до 51\n";
+        std::cout << "Введи число от 1 до " << solutions_size << '\n';
         int n;
 
         try
@@ -79,7 +81,7 @@ void chapter03::startFunction()
                 std::cin.ignore(32767, '\n');
             }
 
-            if (n < 1 || n > 51)
+            if (n < 1 || n > solutions_size)
             {
                 std::cout << "Ты что, дурной?\n";
                 Sleep(1000);
