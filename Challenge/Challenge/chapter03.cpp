@@ -1158,6 +1158,14 @@ void chapter03::solution50()
 
 void chapter03::solution51()
 {
+    std::cout << "¬ведите a и b: ";
+    int a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        std::cout << "–езультат: " << (a >= b && a % b == 0 || b > a && b % a == 0 ? 1 : a + b) << '\n';
+    }
 }
 
 int chapter03::sumNumbers(int n)
