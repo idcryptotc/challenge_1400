@@ -198,10 +198,34 @@ void chapter04::startFunction()
 
 void chapter04::solution01()
 {
+    std::cout << "¬ведите два различных вещественных числа: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        if (a == b)
+        {
+            std::cout << "„исла равны, теб€ просили так не делать\n";
+        }
+        else
+        {
+            std::cout << "„исло " << (a > b ? a : b) << " больше\n";
+            std::cout << "„исло " << (a < b ? a : b) << " меньше\n";
+        }
+    }
 }
 
 void chapter04::solution02()
 {
+    std::cout << "¬ведите x: ";
+    double x;
+    std::cin >> x;
+
+    if (checkInput())
+    {
+        std::cout << "y = " << (x > 0 ? pow(sin(x), 2) : (1 - sin(x * x))) << '\n';
+    }
 }
 
 void chapter04::solution03()
