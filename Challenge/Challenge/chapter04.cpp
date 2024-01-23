@@ -230,6 +230,14 @@ void chapter04::solution02()
 
 void chapter04::solution03()
 {
+    std::cout << "¬ведите x: ";
+    double x;
+    std::cin >> x;
+
+    if (checkInput())
+    {
+        std::cout << "y = " << (x > 0 ? sin(x * x) : (1 + 2 * pow(sin(x), 2))) << '\n';
+    }
 }
 
 void chapter04::solution04()
