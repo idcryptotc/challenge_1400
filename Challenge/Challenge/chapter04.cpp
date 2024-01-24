@@ -293,10 +293,28 @@ void chapter04::solution06()
 
 void chapter04::solution07()
 {
+    std::cout << "¬ведите x: ";
+    double x;
+    std::cin >> x;
+
+    if (checkInput())
+    {
+        double k = sin(x) < 0 ? x * x : abs(x);
+        std::cout << "f = " << (k < x ? k * x : k + x) << '\n';
+    }
 }
 
 void chapter04::solution08()
 {
+    std::cout << "¬ведите x: ";
+    double x;
+    std::cin >> x;
+
+    if (checkInput())
+    {
+        double k = sin(x) >= 0 ? x * x : abs(x);
+        std::cout << "f = " << (k > x ? abs(x) : k * x) << '\n';
+    }
 }
 
 void chapter04::solution09()
