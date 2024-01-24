@@ -319,6 +319,23 @@ void chapter04::solution08()
 
 void chapter04::solution09()
 {
+    std::cout << "Введите два числа: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        if (a == b)
+        {
+            std::cout << "А числа-то равны...\n";
+        }
+        else
+        {
+            std::cout << (a > b
+                ? std::format("Максимальное: {0}\nМинимальное: {1}\n", a, b)
+                : std::format("Максимальное: {0}\nМинимальное: {1}\n", b, a));
+        }
+    }
 }
 
 void chapter04::solution10()
