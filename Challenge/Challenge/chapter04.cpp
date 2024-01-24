@@ -242,6 +242,21 @@ void chapter04::solution03()
 
 void chapter04::solution04()
 {
+    std::cout << "Введите x и y: ";
+    double x, y;
+    std::cin >> x >> y;
+
+    if (checkInput())
+    {
+        if (x == 4)
+        {
+            std::cout << "Точка попала на границу областей I и II\n";
+        }
+        else
+        {
+            std::cout << "Точка попала в область " << (x > 4 ? "II\n" : "I\n");
+        }
+    }
 }
 
 void chapter04::solution05()
