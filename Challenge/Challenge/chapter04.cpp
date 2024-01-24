@@ -280,6 +280,15 @@ void chapter04::solution05()
 
 void chapter04::solution06()
 {
+    std::cout << "¬ведите x: ";
+    double x;
+    std::cin >> x;
+
+    if (checkInput())
+    {
+        std::cout << "а) y = " << (x > 2 ? 2 : x)
+            << "\nб) y = " << (x > 3 ? -3 : -x) << '\n';
+    }
 }
 
 void chapter04::solution07()
