@@ -340,6 +340,7 @@ void chapter04::solution09()
 
 void chapter04::solution10()
 {
+    //тест
 }
 
 void chapter04::solution11()
