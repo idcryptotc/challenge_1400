@@ -340,7 +340,16 @@ void chapter04::solution09()
 
 void chapter04::solution10()
 {
-    //тест
+    const double k = 0.3048;
+    std::cout << "¬ведите X км и Y футов: ";
+    double a, b;
+    std::cin >> a >> b;
+
+    if (checkInput())
+    {
+        double diff = a * 1000 - b * k;
+        std::cout << a << " км " << (diff > 0 ? "больше " : diff < 0 ? "меньше " : "= ") << b << " футов\n";
+    }
 }
 
 void chapter04::solution11()
